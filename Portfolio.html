@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pushparaj G | Software Engineer</title>
+    <style>
+    /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+}
+
+/* Header Navigation */
+header {
+    background: linear-gradient(90deg, #0D47A1, #2196F3);
+    padding: 1rem 2rem; /* smaller padding for flush top-left */
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .logo h1 {
+    color: #000; /* Name in black */
+    margin: 0;
+}
+nav ul {
+    display: flex;
+    gap: 2rem;
+}
+nav ul li a {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+nav ul li a:hover {
+    color: #FF5722;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://via.placeholder.com/1500') no-repeat center center/cover;
+    background-size: cover;
+    color: white;
+    padding: 8rem 2rem;
+    text-align: center;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.6);
+}
+.hero h1 {
+    font-size: 3.8rem;
+    margin-bottom: 1rem;
+    color: #FF5722;
+}
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+.cta-button {
+    background-color: #FF5722;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    transition: background-color 0.3s;
+}
+.cta-button:hover {
+    background-color: #e64a19;
+}
+
+/* About Section */
+.section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 4rem;
+}
+h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* Skills Section */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.skill {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skill:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.skill h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #FF5722;
+}
+.skill p {
+    font-size: 1rem;
+    color: #777;
+}
+.skill img {
+    width: 70px;
+    margin-bottom: 1rem;
+}
+
+/* Experience Section */
+.experience-section {
+    margin-top: 4rem;
+}
+.experience {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.experience h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #0D47A1;
+}
+.experience p {
+    font-size: 1.2rem;
+    color: #555;
+}
+.experience .company-name {
+    font-weight: bold;
+    color: #2196F3;
+}
+
+/* Projects Section */
+.project-card {
+    background-color: #fff;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.project-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+.project-card p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+.project-card a {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #2196F3;
+    padding: 0.8rem 1.6rem;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+.project-card a:hover {
+    background-color: #0D47A1;
+}
+
+/* Footer Section */
+footer {
+    background: linear-gradient(90deg, #0D47A1, #2196F3);
+    padding: 3rem 2rem;
+    color: white;
+    text-align: center;
+}
+footer p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+footer ul li a {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+footer ul li a:hover {
+    color: #FF5722;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Main Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+				<h1 style="color: #fff; margin: 0;">Pushparaj G</h1> 
+			</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hello, I'm Pushparaj G</h1>
+            <p>Software Engineer | Backend Developer | Integration Specialist</p>
+            <p>Passionate about building scalable enterprise solutions and optimizing backend systems.</p>
+            <a href="#contact" class="cta-button">Let's Connect</a>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>
+            I am an entry-level Software Engineer with a B.Tech in Computer Science & Engineering. With hands-on experience in enterprise integration, backend systems, and API development, I am passionate about building robust and scalable systems. Currently, I am working with MuleSoft Anypoint Studio and TIBCO web services, creating integrations that optimize business processes.
+        </p>
+    </section>
+
+<!-- Skills Section -->
+<section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skills-container">
+        <!-- Skill Cards -->
+        <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java Logo">
+            <h3>Java</h3>
+            <p>Proficient in Java for building scalable backend systems and enterprise applications.</p>
+        </div>
+        <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Logo">
+            <h3>Python</h3>
+            <p>Experienced in Python for data processing, backend development, and scripting.</p>
+        </div>
+        <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++ Logo">
+            <h3>C++</h3>
+            <p>Familiar with C++ for system-level programming and algorithm development.</p>
+        </div>
+        <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 Logo">
+            <h3>HTML5</h3>
+            <p>Solid understanding of HTML5 for building responsive and structured webpages.</p>
+        </div>
+        <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 Logo">
+            <h3>CSS3</h3>
+            <p>Skilled in CSS3 to create responsive layouts, animations, and web designs.</p>
+        </div>
+        <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript Logo">
+            <h3>JavaScript</h3>
+            <p>Expert in JavaScript for building dynamic, interactive web applications.</p>
+        </div>
+        <!-- New Skills -->
+        <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL Logo">
+            <h3>SQL</h3>
+            <p>Experienced in SQL for database design, query optimization, and data management.</p>
+        </div>
+        <div class="skill">
+            <img src="https://www.svgrepo.com/show/303679/aws-logo-logo.svg" alt="AWS Logo">
+            <h3>AWS</h3>
+            <p>Proficient in AWS services for cloud deployments, integrations, and server management.</p>
+        </div>
+    </div>
+</section>
+    <!-- Experience Section -->
+    <section id="experience" class="section experience-section">
+        <h2>Experience</h2>
+        <!-- Experience Entries -->
+        <div class="experience">
+            <h3>Software Engineering Intern</h3>
+            <p class="company-name">Virtusa</p>
+            <p><strong>Feb 2023 – Aug 2023</strong></p>
+            <ul>
+                <li>Developed modules for an Airline Reservation Management System using PL/SQL and REST APIs.</li>
+                <li>Optimized SQL queries, improving database response time by 20%.</li>
+                <li>Worked in Agile sprints, contributing to debugging, testing, and defect resolution.</li>
+            </ul>
+        </div>
+        <div class="experience">
+            <h3>Trainee Engineer – Integration Development</h3>
+            <p class="company-name">iSteer Technologies</p>
+            <p><strong>Nov 2025 – Present</strong></p>
+            <ul>
+                <li>Developed enterprise applications using MuleSoft Anypoint Studio.</li>
+                <li>Designed and deployed API-led integrations and REST-based web services.</li>
+                <li>Ensured 99% uptime and performance reliability with CloudHub deployments.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <h3>MediShift-AI</h3>
+            <p>An AI-driven healthcare scheduling system reducing scheduling errors by 30%.</p>
+            <p>Technologies: JavaScript, Node.js, REST APIs</p>
+            <a href="https://github.com/pushparaj09/mediShift-AI" target="_blank" class="cta-button">View Project</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Exploration Encryption Scheme Using MD5</h3>
+            <p>A secure message transmission model using MD5 encryption for secure data transfer.</p>
+            <p>Technologies: Java, Cryptography</p>
+            <a href="https://github.com/pushparaj09/exploration-encryption" target="_blank" class="cta-button">View Project</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <form action="mailto:pushparaj69463@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required><br>
+            <input type="email" name="email" placeholder="Your Email" required><br>
+            <textarea name="message" placeholder="Your Message" required></textarea><br>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2026 Pushparaj G</p>
+        <ul>
+            <li><a href="https://linkedin.com/in/Pushparajg09" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/pushparaj09" target="_blank">GitHub</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
